@@ -1,5 +1,4 @@
 apiVersion: v1
-appVersion: "1.0"
-description: A Helm chart for Kubernetes
-name: helm
+description: My First Helm Chart - NGINX Example
+name: my-first-helm-chart
 version: 0.1.0

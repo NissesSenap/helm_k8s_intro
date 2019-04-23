@@ -22,3 +22,13 @@ helm init
 ### Create the repo
 helm create helm
 
+Uppgrade the files according to the blog
+
+### Get the minikube url
+minikube service second --url
+
+### Upgrade helm with a new tag
+helm upgrade --set image.repository=httpd --set image.tag=2.2.34-alpine second helm
+
+### Change in values.yaml replica count to 3
+helm upgrade second helm
