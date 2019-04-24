@@ -35,6 +35,18 @@ spec:
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 1
+          periodSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 1
+          periodSeconds: 2
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
