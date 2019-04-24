@@ -32,3 +32,18 @@ helm upgrade --set image.repository=httpd --set image.tag=2.2.34-alpine second h
 
 ### Change in values.yaml replica count to 3
 helm upgrade second helm
+
+## Configmap stuff
+Counting on that the configmap have been created by helm earlier.
+
+### get configmap
+k get configmap special-config -o yaml
+
+### Delete configmap
+kubectl delete configmap special-config
+
+### Create config map
+kubectl create configmap special-config --from-literal=special.how=very
+
+### Create busybox that uses configmap
+k create -f .\manifests\deployment_busybox.yaml
